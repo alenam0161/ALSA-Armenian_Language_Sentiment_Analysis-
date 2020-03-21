@@ -14,7 +14,7 @@ def scrap_page(url):
 
 finallist=[]
 
-for a in range(2,38):
+for a in range(1,39):
     
     page= requests.get(f'https://www.encyclopedia.am/encyclopedia1.php?lId={a}').content
     soup=BeautifulSoup(page,'html.parser')
@@ -29,6 +29,9 @@ for a in range(2,38):
         scraped=scrap_page(f'https://www.encyclopedia.am/pages.php?bId={b}&hId={c}')
         finallist.extend(scraped)
 
-with open('test.cor', 'a') as f:
+with open('test2.cor', 'a') as f:
     for item in finallist:
         f.write("%s\n" % item)
+
+
+
