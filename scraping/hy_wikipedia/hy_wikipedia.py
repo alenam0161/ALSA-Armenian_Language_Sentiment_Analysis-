@@ -14,7 +14,9 @@ driver.get("https://hy.wikipedia.org/wiki/")
 while True:
 
     # alt+shift+x shortcut to get random data in wikipedia
-    webdriver.ActionChains(driver).key_down(Keys.ALT).key_down(Keys.SHIFT).send_keys("x").key_up(Keys.ALT).key_up(Keys.SHIFT).perform()
+    webdriver.ActionChains(driver).key_down(Keys.ALT).key_down(Keys.SHIFT).send_keys(
+        "x"
+    ).key_up(Keys.ALT).key_up(Keys.SHIFT).perform()
     soup = BeautifulSoup(driver.page_source, "html.parser")
 
     # get all sentences from page and split by :, than create one dimensional list using from_iterable
