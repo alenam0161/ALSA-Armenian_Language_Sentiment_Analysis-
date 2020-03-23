@@ -25,4 +25,4 @@ while True:
     # write to file each page
     with open("hy_wikipedia.cor", "a") as f:
         for i in wikidat:
-            f.write("%s\n" % i.replace("\n", ""))
+            f.write("%s\n" % i.replace("\n", "").lstrip())

@@ -29,8 +29,7 @@ def write_in_file(my_list, current_txt_heading):
 
 for current_name in list_of_pdfs:
     current_pdf = 'pdfs/' + current_name[0:-4] + '.pdf'
-    current_txt = 'txts/' + current_name[0:-4] + '.cor'
+    current_txt = 'cors/' + current_name[0:-4] + '.cor'
 
-    my_text = extract_pdf_text(current_pdf)
-    final_list = remove_numbers_and_lines(my_text)
+    final_list = remove_numbers_and_lines(extract_pdf_text(current_pdf))
     write_in_file(final_list, current_txt)
