@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 import itertools
 import time
 
-driver = webdriver.Chrome("./chromedriver")
+driver = webdriver.Chrome("../../drivers/chromedriver")
 
 
 driver.get("https://hy.wikipedia.org/wiki/")
