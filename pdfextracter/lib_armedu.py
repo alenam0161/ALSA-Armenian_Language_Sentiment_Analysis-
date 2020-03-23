@@ -8,7 +8,7 @@ chrome_options.add_experimental_option("prefs", prefs)
 
 
 driver = webdriver.Chrome(
-    "../scraping/hy_wikipedia/chromedriver", options=chrome_options
+    "../../drivers/chromedriver", options=chrome_options
 )
 
 for i in range(1, 2000):
