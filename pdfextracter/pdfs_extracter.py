@@ -1,9 +1,8 @@
 from tika import parser
 import re
+import os
 
-from tika import parser
-
-list_of_pdfs = ['armenian_dictionary', 'rights']
+list_of_pdfs = [file for file in os.listdir("pdfs/") if file.endswith(".pdf")]
 
 
 # extracting data from pdf file
@@ -16,7 +15,7 @@ def extract_pdf_text(file_path):
 def remove_numbers_and_lines(text):
     text = ''.join([x for x in text if not x.isdigit()])
     text = text.replace('\n', '')
-    text = re.sub(' +', ' ', text)
+    text = re.sub('  +', ' ', text)
     text = text.split(":")
     return text
 
@@ -25,13 +24,12 @@ def remove_numbers_and_lines(text):
 def write_in_file(my_list, current_txt_heading):
     with open(current_txt_heading, 'w', encoding="utf-8") as f1:
         for list_item in my_list:
-            content = list_item
-            f1.write(content + '\n')
+            f1.write(list_item + '\n')
 
 
 for current_name in list_of_pdfs:
-    current_pdf = 'pdfs/' + current_name + '.pdf'
-    current_txt = 'txts/' + current_name + '.txt'
+    current_pdf = 'pdfs/' + current_name[0:-4] + '.pdf'
+    current_txt = 'txts/' + current_name[0:-4] + '.cor'
 
     my_text = extract_pdf_text(current_pdf)
     final_list = remove_numbers_and_lines(my_text)
