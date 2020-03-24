@@ -1,7 +1,7 @@
 from selenium import webdriver
 
 homelink = (
-    "/home/john/Dsprojm/ALSA-Armenian_Language_Sentiment_Analysis-"
+    "directory of the main folder"
     + "/pdfextracter/pdfs"
 )
 
