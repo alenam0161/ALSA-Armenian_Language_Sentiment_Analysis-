@@ -18,7 +18,7 @@ def remove_numbers_and_lines(text):
     text = "".join([x for x in text if not x.isdigit()])
     text = text.replace("\n", "")
     text = re.sub("  +", " ", text)
-    text = text.split(":")
+    text = text.split("։")
     return text
 
 
@@ -34,8 +34,8 @@ def write_in_file(my_list, current_txt_heading):
 for current_name in list_of_pdfs:
     current_pdf = "pdfs/" + current_name[0:-4] + ".pdf"
     current_txt = "cors/" + current_name[0:-4] + ".cor"
-
     current_text = extract_pdf_text(current_pdf)
+
     # check if the text is not empty
     if current_text:
         write_in_file(remove_numbers_and_lines(current_text), current_txt)

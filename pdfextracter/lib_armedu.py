@@ -1,15 +1,16 @@
 from selenium import webdriver
 
-homelink = "/home/john/Dsprojm/ALSA-Armenian_Language_Sentiment_Analysis-" + "/pdfextracter/pdfs"
+homelink = (
+    "/home/john/Dsprojm/ALSA-Armenian_Language_Sentiment_Analysis-"
+    + "/pdfextracter/pdfs"
+)
 
 chrome_options = webdriver.ChromeOptions()
 prefs = {"download.default_directory": homelink}
 chrome_options.add_experimental_option("prefs", prefs)
 
 
-driver = webdriver.Chrome(
-    "../drivers/chromedriver", options=chrome_options
-)
+driver = webdriver.Chrome("../drivers/chromedriver", options=chrome_options)
 
 for i in range(100, 2000):
     driver.get(f"https://lib.armedu.am/resource/{i}")
