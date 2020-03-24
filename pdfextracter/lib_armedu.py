@@ -1,7 +1,7 @@
 from selenium import webdriver
 
 homelink = (
-    "directory of the main folder"
+    "path of the cloned directory"
     + "/pdfextracter/pdfs"
 )
 
